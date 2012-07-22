@@ -1,0 +1,34 @@
+application: sotnaskjiurts
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+# All URLs ending in .gif .png or .jpg are treated as paths to static files in
+# the static/ directory. The URL pattern is a regexp, with a grouping that is
+# inserted into the path to the file.
+#- url: /images/(.*\.(gif|png|jpg))
+#  static_files: static/images/\1
+#  upload: static/images/(.*\.(gif|png|jpg))
+
+#- url: /images
+#  static_dir: static/images
+#  mime_type: image/jpg 
+
+- url: /luc.jpg
+  static_files: static/images/luc.jpg
+  upload: static/images/luc.jpg
+
+- url: /law.jpg
+  static_files: static/images/law.jpg
+  upload: static/images/law.jpg
+
+- url: /di.jpg
+  static_files: static/images/di.jpg
+  upload: static/images/di.jpg
+
+- url: /.*
+  script: main.py
